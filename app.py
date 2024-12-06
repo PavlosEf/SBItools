@@ -24,15 +24,15 @@ st.markdown(
             background-color: #EAEAEA; /* Light grey input fields */
             color: #000000; /* Black text inside input fields */
         }
-        .result-box {
+          .result-box {
             border: 2px solid #FFFFFF;  /* White border */
             padding: 5px;
-            margin: 5px;
+            margin-top: 0px; /* Align height with inputs */
             text-align: center;
             border-radius: 5px;
-            width: 50%;  /* Half the input box width */
+            width: 100%;  /* Full width of its column */
             display: inline-block;
-            vertical-align: middle; /* Aligns the box with the input fields */
+}
         }
         .ok {
             color: #00FF00; /* Green for OK */
