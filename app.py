@@ -63,7 +63,7 @@ def parse_number(number_str):
 def get_label(difference):
     if difference > 2:
         return '<div class="result-box ok">OK</div>'
-    elif -2 <= difference <= 2:
+    elif -2 >= difference >= 2:
         return '<div class="result-box off2">OFF 2</div>'
     elif difference < -2:
         return '<div class="result-box off1">OFF 1</div>'
