@@ -20,7 +20,7 @@ st.markdown(
 )
 
 # Page title and description
-st.title("Price Difference Calculator")
+st.title("Off prices Calculator")
 st.markdown("Enter prices below to calculate the percentage difference for up to 10 rows.")
 
 # Helper function to parse numbers (handles commas and periods)
