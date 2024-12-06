@@ -93,6 +93,6 @@ if price_a and price_b:
         with col4:
             st.markdown(get_label(difference), unsafe_allow_html=True)
 
- unsafe_allow_html=True)  # Display label
+
 
 
