@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Set the page title and layout
-st.set_page_config(page_title="Price Difference Calculator", layout="centered")
+st.set_page_config(page_title="Off prices Calculator", layout="centered")
 
 # Custom CSS for styling
 st.markdown(
