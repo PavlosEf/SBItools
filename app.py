@@ -30,7 +30,9 @@ st.markdown(
             margin: 5px;
             text-align: center;
             border-radius: 5px;
-            min-width: 70px;
+            width: 50%;  /* Half the input box width */
+            display: inline-block;
+            vertical-align: middle; /* Aligns the box with the input fields */
         }
         .ok {
             color: #00FF00; /* Green for OK */
