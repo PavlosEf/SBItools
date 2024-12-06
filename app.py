@@ -30,7 +30,7 @@ st.markdown(
             margin-top: 0px; /* Align height with inputs */
             text-align: center;
             border-radius: 5px;
-            width: 100%;  /* Full width of its column */
+            width: 30%;  /* Full width of its column */
             display: inline-block;
 }
         }
