@@ -60,39 +60,38 @@ def parse_number(number_str):
 # Calculate label outcome based on the difference
 def get_label(difference):
     if difference > 2:
-        return '<div class="outcome-box ok">OK</div>'
+        return '<div class="result-box ok">OK</div>'
     elif -2 <= difference <= 3:
-        return '<div class="outcome-box off2">OFF 2</div>'
-    elif difference > 3:
-        return '<div class="outcome-box off1">OFF 1</div>'
+        return '<div class="result-box off2">OFF 2</div>'
+    elif difference < -2:
+        return '<div class="result-box off1">OFF 1</div>'
+    else:
+        return '<div class="result-box">None</div>'
 
 # Create input fields and calculate results
 for i in range(10):
-    col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])  # Adjust column sizes
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])  # Adjust column sizes
     
     with col1:
-        price_a = st.text_input(f"Kaizen Odds : ", key=f"price_a_{i}")
+        price_a = st.text_input(f"Kaizen Odds {i + 1}:", key=f"price_a_{i}")
     with col2:
-        price_b = st.text_input(f"Competition Odds :", key=f"price_b_{i}")
+        price_b = st.text_input(f"Competition Odds {i + 1}:", key=f"price_b_{i}")
     
-if price_a and price_b:
-    parsed_a = parse_number(price_a)
-    parsed_b = parse_number(price_b)
-    if parsed_a and parsed_b and parsed_a > 0 and parsed_b > 0:
-        # Calculate percentage difference
-        difference = ((1 / parsed_a) - (1 / parsed_b)) * 100
-        
-        # Display percentage difference in a styled box
-        with col3:
-            st.markdown(
-                f'<div class="result-box">{difference:.2f}%</div>',
-                unsafe_allow_html=True,
-            )
-        
-        # Display label in a styled box
-        with col4:
-            st.markdown(get_label(difference), unsafe_allow_html=True)
-
-
-
-
+    # Ensure inputs are provided
+    if price_a and price_b:
+        parsed_a = parse_number(price_a)
+        parsed_b = parse_number(price_b)
+        if parsed_a and parsed_b and parsed_a > 0 and parsed_b > 0:
+            # Calculate percentage difference
+            difference = ((1 / parsed_a) - (1 / parsed_b)) * 100
+            
+            # Display percentage difference in a styled box
+            with col3:
+                st.markdown(
+                    f'<div class="result-box">{difference:.2f}%</div>',
+                    unsafe_allow_html=True,
+                )
+            
+            # Display label in a styled box
+            with col4:
+                st.markdown(get_label(difference), unsafe_allow_html=True)
