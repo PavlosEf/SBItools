@@ -72,8 +72,8 @@ def get_label(difference):
 
 # Create input fields and calculate results
 for i in range(10):
-    col1, col2, col3, col4 = st.columns([1, 1, 1.6, 1])  # Adjust column sizes
-    
+    col1, col2, col3, col4, col5 = st.columns([1, 1, 0.8, 0.2, 0.6])  # Separate % and label columns
+  
     with col1:
         price_a = st.text_input(f"Kaizen Odds {i + 1}:", key=f"price_a_{i}")
     with col2:
@@ -95,5 +95,5 @@ for i in range(10):
                 )
             
             # Display label in a styled box
-            with col4:
+            with col5:
                 st.markdown(get_label(difference), unsafe_allow_html=True)
