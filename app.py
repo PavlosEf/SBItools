@@ -27,7 +27,7 @@ st.markdown(
           .result-box {
             border: 2px solid #FFFFFF;  /* White border */
             padding: 5px;
-            margin-top: -5px; /* Align height with inputs */
+            margin-top: 10px; /* Align height with inputs */
             text-align: center;
             border-radius: 5px;
             width: 45%;  /* Full width of its column */
