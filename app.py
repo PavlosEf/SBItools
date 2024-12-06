@@ -3,6 +3,30 @@ import streamlit as st
 # Set the page title and layout
 st.set_page_config(page_title="Price Difference Calculator", layout="centered")
 
+# Custom CSS for styling
+st.markdown(
+    """
+    <style>
+        body {
+            background-color: #2B2B2B;  /* Dark gray background */
+            color: #FFFFFF;  /* White text */
+        }
+        .stTextInput > label {
+            font-size: 16px;
+            color: #FFFFFF;  /* White input labels */
+        }
+        .stTextInput {
+            margin-bottom: 20px;  /* Add spacing between input sections */
+        }
+        input {
+            background-color: #EAEAEA; /* Light gray input fields */
+            color: #000000; /* Black text inside input fields */
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # Page title and description
 st.title("Price Difference Calculator")
 st.markdown("Enter prices below to calculate the percentage difference for up to 10 rows.")
