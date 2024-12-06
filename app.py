@@ -69,9 +69,9 @@ for i in range(10):
     col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])  # Adjust column sizes
     
     with col1:
-        price_a = st.text_input(f"Price A {i + 1}", key=f"price_a_{i}")
+        price_a = st.text_input(f"Kaizen Odds : ", key=f"price_a_{i}")
     with col2:
-        price_b = st.text_input(f"Price B {i + 1}", key=f"price_b_{i}")
+        price_b = st.text_input(f"Competition Odds :", key=f"price_b_{i}")
     
     if price_a and price_b:
         parsed_a = parse_number(price_a)
