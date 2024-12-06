@@ -33,16 +33,15 @@ def parse_number(number_str):
 # Create input fields and calculate results
 results = []
 for i in range(10):
-    st.write(f"### Row {i + 1}")
     col1, col2, col3 = st.columns(3)
 
     # Input for Price A
     with col1:
-        price_a = st.text_input(f"Price A (Row {i + 1})", key=f"price_a_{i}")
+        price_a = st.text_input(f"Price A)", key=f"price_a_{i}")
     
     # Input for Price B
     with col2:
-        price_b = st.text_input(f"Price B (Row {i + 1})", key=f"price_b_{i}")
+        price_b = st.text_input(f"Price B)", key=f"price_b_{i}")
     
     # Output for percentage difference
     with col3:
