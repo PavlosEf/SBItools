@@ -72,7 +72,7 @@ def get_label(difference):
 
 # Create input fields and calculate results
 for i in range(10):
-    col1, col2, col3, col4 = st.columns([1, 1, 1.5, 1.5])  # Adjust column sizes
+    col1, col2, col3, col4 = st.columns([1, 1, 1.9, 1.9])  # Adjust column sizes
     
     with col1:
         price_a = st.text_input(f"Kaizen Odds {i + 1}:", key=f"price_a_{i}")
