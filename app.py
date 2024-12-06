@@ -6,14 +6,15 @@ st.set_page_config(page_title="Off prices Calculator", layout="centered")
 st.markdown(
     """
     <style>
-        body {
-            background-color: #2B2B2B;  /* Dark grey background */
-            color: #FFFFFF;  /* White text */
+        /* Change background color of the main content */
+        .stApp {
+            background-color: #1E1E1E;  /* Dark grey */
         }
     </style>
     """,
     unsafe_allow_html=True,
 )
+
 
 # Page title and description
 st.title("Price Difference Calculator")
