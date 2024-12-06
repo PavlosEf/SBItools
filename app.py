@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Set the page title and layout
-st.set_page_config(page_title="Off prices Calculator", layout="centered")
+st.set_page_config(page_title="Price Difference Calculator", layout="centered")
 
 # Custom CSS for styling
 st.markdown(
@@ -39,30 +39,29 @@ def parse_number(number_str):
         return None
 
 # Create input fields and calculate results
+st.sidebar.header("Input Prices")  # Align to the top-left sidebar
 results = []
 for i in range(10):
-    st.write(f"### Row {i + 1}")
-    col1, col2, col3 = st.columns(3)
-
-    # Input for Price A
-    with col1:
-        price_a = st.text_input(f"Price A (Row {i + 1})", key=f"price_a_{i}")
+    # Input for Price A and Price B in the sidebar
+    price_a = st.sidebar.text_input(f"Price A {i + 1}", key=f"price_a_{i}")
+    price_b = st.sidebar.text_input(f"Price B {i + 1}", key=f"price_b_{i}")
     
-    # Input for Price B
-    with col2:
-        price_b = st.text_input(f"Price B (Row {i + 1})", key=f"price_b_{i}")
-    
-    # Output for percentage difference
-    with col3:
-        if price_a and price_b:
-            parsed_a = parse_number(price_a)
-            parsed_b = parse_number(price_b)
-            if parsed_a and parsed_b and parsed_a > 0 and parsed_b > 0:
-                difference = ((1 / parsed_a) - (1 / parsed_b)) * 100
-                col3.write(f"{difference:.2f}%")
-            else:
-                col3.write("Invalid input")
+    # Calculate and display the percentage difference
+    if price_a and price_b:
+        parsed_a = parse_number(price_a)
+        parsed_b = parse_number(price_b)
+        if parsed_a and parsed_b and parsed_a > 0 and parsed_b > 0:
+            difference = ((1 / parsed_a) - (1 / parsed_b)) * 100
+            results.append(f"Row {i + 1}: {difference:.2f}%")
         else:
-            col3.write("Enter values")
+            results.append(f"Row {i + 1}: Invalid input")
+    else:
+        results.append(f"Row {i + 1}: Enter values")
+
+# Display results on the main page
+st.header("Results")
+for result in results:
+    st.write(result)
+
 
 
