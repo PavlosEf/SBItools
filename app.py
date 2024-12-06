@@ -24,11 +24,13 @@ st.markdown(
             background-color: #EAEAEA; /* Light grey input fields */
             color: #000000; /* Black text inside input fields */
         }
-        .outcome-box {
-            font-weight: bold;
+        .result-box {
+            border: 2px solid #FFFFFF;  /* White border */
             padding: 5px;
-            border-radius: 5px;
+            margin: 5px;
             text-align: center;
+            border-radius: 5px;
+            min-width: 70px;
         }
         .ok {
             color: #00FF00; /* Green for OK */
@@ -80,9 +82,15 @@ for i in range(10):
             # Calculate percentage difference
             difference = ((1 / parsed_a) - (1 / parsed_b)) * 100
             
-            with col3:
-                st.write(f"{difference:.2f}%")  # Display percentage difference
-            with col4:
-                st.markdown(get_label(difference), unsafe_allow_html=True)  # Display label
+          with col3:
+    # Display percentage difference in a styled box
+    st.markdown(
+        f'<div class="result-box">{difference:.2f}%</div>',
+        unsafe_allow_html=True,
+    )
+with col4:
+    # Display label in a styled box
+    st.markdown(get_label(difference), unsafe_allow_html=True)
+ unsafe_allow_html=True)  # Display label
 
 
